@@ -4,7 +4,7 @@
   
   @for (p of listePersonnes; track p.nom) {
     
-      <app-personne [nom]="p.nom" [ville]="p.ville"></app-personne>
+      <app-personne [nom]="p.nom" [ville]="p.ville" (personneSupprimee)="supprimerDeLaListe($event)"></app-personne>
 
   }
 
@@ -12,15 +12,10 @@
   <p>La liste est vide</p>
 }
 
-<h2>Ajouter une personne</h2>
-    <form [formGroup]="form" (ngSubmit)="ajouterPersonne()">
-      <div>
-        <label for="name">Nom</label>
-        <input type="text" id="name" formControlName="name" />
-      </div>
-      <div>
-        <label for="ville">Ville</label>
-        <input type="text" id="ville" formControlName="ville" />
-      </div>
-      <button type="submit" [disabled]="form.invalid">Envoyer</button>
-    </form>
+<app-formulaire-ajout-personne (personneCreee)="ajouterALaListe($event)"></app-formulaire-ajout-personne>
+
+
+
+@for (p of listePersonnes; track p.nom) {
+
+}

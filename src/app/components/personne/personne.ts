@@ -1,4 +1,4 @@
-import { Component, Input, input, signal, WritableSignal } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-personne',
@@ -8,10 +8,21 @@ import { Component, Input, input, signal, WritableSignal } from '@angular/core';
 })
 export class Personne {
 
+
   // Angular attend un nom
   @Input() nom : string = '';
 
   // POur la Ville 
   @Input() ville : string = '';
+
+  @Output() personneSupprimee = new EventEmitter<any>();
+
+  supprimerPersonne() {
+  // On met les infos de la personne dans l'enveloppe avant de l'envoyer
+   this.personneSupprimee.emit({ 
+     nom: this.nom, 
+     ville: this.ville 
+   });
+  }
 
 }
