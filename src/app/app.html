@@ -1,8 +1,13 @@
 <h1>Ma superbe Application</h1>
-<h2>{{ title }}</h2>
-<p>URL de l'application : {{ getUrl() }}</p>
-<app-personne></app-personne>
 
-  <p>Partie 2</p>
+@if (listePersonnes.length > 0) {
+  
+  @for (p of listePersonnes; track p.nom) {
+    
+      <app-personne [nom]="p.nom" [ville]="p.ville"></app-personne>
 
-  <app-lumiere></app-lumiere>
+  }
+
+} @else {
+  <p>La liste est vide</p>
+}

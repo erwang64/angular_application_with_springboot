@@ -11,11 +11,8 @@ import { Lumiere } from "./components/lumiere/lumiere";
 })
 export class App {
 
-  title : string = "Angular avec Spring Boot";
-
-  url : String = `${window.location.protocol}//${window.location.hostname}:${window.location.port}`;
-
-  getUrl() : String {
-    return this.url;
-  }
+  listePersonnes = [
+    { nom: 'Erwan', ville: 'Bayonne' },
+    { nom: 'Marie', ville: 'Cholet' },
+  ]
 }
