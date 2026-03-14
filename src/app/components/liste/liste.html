@@ -1,0 +1,8 @@
+<h2>Liste des personnes</h2>
+
+@for (personne of listePersonnes; track $index) {
+  <p>{{ personne.nom | uppercase }} - {{ personne.ville }}</p>
+} @empty {
+  <p>Personne à l'horizon... La liste est vide !</p>
+}
+

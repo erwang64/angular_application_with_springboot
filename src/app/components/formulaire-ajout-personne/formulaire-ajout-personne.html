@@ -1,0 +1,13 @@
+<h2>Ajouter une nouvelle personne</h2>
+
+<div>
+  <label>Nom :</label>
+  <input type="text" [(ngModel)]="nouveauNom" placeholder="Ex: Jean">
+</div>
+
+<div>
+  <label>Ville :</label>
+  <input type="text" [(ngModel)]="nouvelleVille" placeholder="Ex: Paris">
+</div>
+
+<button (click)="ajouterPersonne()">Enregistrer</button>

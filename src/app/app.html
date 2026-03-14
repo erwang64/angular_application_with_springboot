@@ -1,5 +1,21 @@
 <h1>Ma superbe Application</h1>
 
-@for (personne of listePersonnes; track $index) {
-  <p>{{ personne.nom | uppercase }} - {{ personne.ville }}</p>
-}
+<nav>
+  <button routerLink="/liste">Voir la liste</button>
+</nav>
+
+<hr>
+
+<nav>
+  <button routerLink="/ajouter">Ajouter une personne</button>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
