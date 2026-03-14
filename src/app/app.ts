@@ -24,6 +24,14 @@ ajouterALaListe(nouvellePersonne: any) {
   this.listePersonnes.push(nouvellePersonne);
 }
 
+  modifierDansLaListe(personneModifiee: any) {
+    // On met à jour la personne dans la liste
+    this.listePersonnes = this.listePersonnes.map(p => 
+      p.nom === personneModifiee.nom && p.ville === personneModifiee.ville ? personneModifiee : p
+    );
+  }
+
+
 supprimerDeLaListe(personneAEffacer: any) {
   // On garde tout le monde SAUF celui qui a le même nom et la même ville
   this.listePersonnes = this.listePersonnes.filter(p => 

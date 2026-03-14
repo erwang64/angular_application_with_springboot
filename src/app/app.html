@@ -4,7 +4,7 @@
   
   @for (p of listePersonnes; track p.nom) {
     
-      <app-personne [nom]="p.nom" [ville]="p.ville" (personneSupprimee)="supprimerDeLaListe($event)"></app-personne>
+      <app-personne [nom]="p.nom" [ville]="p.ville" (personneSupprimee)="supprimerDeLaListe($event)" (personneModifiee)="modifierDansLaListe($event)"></app-personne>
 
   }
 
